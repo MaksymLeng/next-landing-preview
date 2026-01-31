@@ -175,6 +175,7 @@ export const LandingPreview = ({
                     <iframe
                         title="Preview"
                         srcDoc={srcDoc}
+                        sandbox="allow-scripts allow-same-origin allow-popups"
                         className="w-full h-full border-none bg-white block"
                     />
                 </div>

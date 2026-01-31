@@ -14,7 +14,7 @@ export const Navbar = () => {
                 </div>
 
                 <div className="flex flex-1 items-center justify-end space-x-2">
-                    <nav className="flex items-center">
+                    <nav className="flex items-end">
                         <ToggleTheme />
                     </nav>
                 </div>
