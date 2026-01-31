@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# React Landing Preview 📱💻
 
-## Getting Started
+A beautiful, responsive preview modal for Next.js/React applications. Perfect for page builders, CMS, or email template editors.
 
-First, run the development server:
+![Demo Screenshot](link-to-screenshot.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🖥️ **Dual View:** Instant toggle between Desktop and Mobile (iPhone notch style) views.
+- 🔒 **Sandboxed:** Uses `iframe` with `srcDoc` for style isolation.
+- 🛡️ **Safe Interactions:** Automatically intercepts link clicks to prevent navigation away from the preview.
+- 🎨 **Smart Styling:** Injects custom scrollbars and utility classes if needed.
+- 🧩 **Stack:** Built with Radix UI (Dialog), Lucide React, and Tailwind CSS.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This is a copy-paste component (shadcn/ui style).
 
-## Learn More
+1. Ensure you have the necessary dependencies:
+\`\`\`bash
+npm install lucide-react sonner clsx tailwind-merge
+npx shadcn-ui@latest add dialog button
+\`\`\`
 
-To learn more about Next.js, take a look at the following resources:
+2. Copy `src/components/landing-preview.tsx` to your project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+\`\`\`tsx
+import { useState } from "react";
+import { LandingPreview } from "@/components/landing-preview";
 
-## Deploy on Vercel
+export const MyBuilder = () => {
+  const [showPreview, setShowPreview] = useState(false);
+  const myHtml = "<h1>Hello World</h1>";
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  return (
+    <>
+      <button onClick={() => setShowPreview(true)}>Preview</button>
+      
+      <LandingPreview 
+        open={showPreview} 
+        onClose={() => setShowPreview(false)} 
+        htmlContent={myHtml} 
+      />
+    </>
+  );
+};
+\`\`\`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Credits & Attribution
+
+The example templates used in this demonstration (Pop Art, SaaS, Cyberpunk) were generated using Optihint.
+
+This repository serves as a showcase for the preview component logic, while the HTML content is used to demonstrate the rendering capabilities of generated pages.
