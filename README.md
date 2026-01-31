@@ -2,7 +2,7 @@
 
 A beautiful, responsive preview modal for Next.js/React applications. Perfect for page builders, CMS, or email template editors.
 
-![Demo Screenshot](link-to-screenshot.png)
+![Demo Screenshot](https://github.com/MaksymLeng/next-landing-preview/blob/main/public/demo-screenshot.png)
 
 ## Features
 
